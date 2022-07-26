@@ -85,9 +85,7 @@ class PPerson : public Person {
 		
 		PPerson( Person Chars, Position place) : Person(Chars.GetName(), Chars.GetHealth(), Chars.GetArmor(), Chars.GetDamage() ) {
 			ID = Chars.GetId(); 
-//			Health = Chars.GetHealth();
-//			Armor = Chars.GetArmor();
-//			Damage = Chars.GetDamage();
+
 			Place.Str = place.Str; 
 			Place.Col = place.Col;
 		}
@@ -125,13 +123,12 @@ class Field {
 		vector<PPerson> PPersons;
 	public:
 		void AddPerson( Person pers ) {
-//			int Str, Col;
+
 			Position Place = FindFreeCell();
 			Cells[Place.Str][Place.Col] = pers.GetId();
 			PPerson PPers(pers, Place);
 			PPersons.push_back( PPers );
 			
-			// TODO set coordinates
 		} 
 		
 		int FindPPerson( int ppersID ) {
@@ -198,7 +195,6 @@ class Field {
 				return true;
 			}
 			else return false;
-//			return IsInField( AnotherPosition && IsFree(PPers.GetPlace().Move(Direction) );
 		}
 		
 	
@@ -219,14 +215,7 @@ class Field {
 				PPersons.erase( PPersons.begin() + SecondFighter );
 			}
 		}
-		
-//		bool Damage(int Dmg) {
-//			if( Dmg > Armor ) {
-//				Health -= (Dmg - Armor);
-//			}
-//			return Health > 0;
-//		}
-		
+			
 		void FindFreeCell( int *str, int *col) {
 			do {
 				*str = GetRandomInt(0, Height - 1);
@@ -280,7 +269,7 @@ class Field {
 				PPersons[PersNum].SetPlace( PPersons[PersNum].GetPlace().Move(WannaGo) ); // settin nep place to 
 				CurPlace = PPersons[PersNum].GetPlace(); // getting new place on field
 				Cells[CurPlace.Str][CurPlace.Col] = PPersons[PersNum].GetId(); // settin to new place on field
-//				Print();
+
 			}
 			else if( NeedFight( PPersons[PersNum], WannaGo, &Opponent ) ) {
 				cout << "\nFight!!! ";
