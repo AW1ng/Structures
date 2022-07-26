@@ -96,9 +96,6 @@ int main() {
 //	cout << "Normalized ";
 //	sum.normalize(v3);
 //	sum.add(v1, v2); cout<<"\n";
-	string operation;
-	cout << "Enter command to operate with vectors (add, sustract, scale, length, normalize)\n";
-	cin >> operation;
-	if( sum.Do(operation) );
+
 	
 }
