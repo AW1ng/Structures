@@ -102,7 +102,7 @@ void add(string path) {
 
 
 struct statement {
-	string path = "C:\\Users\\Alex_dev\\Desktop\\Prog\\skill\\Structures\\statement.txt";
+	string path = "";
 	
 		bool Do(string Command) {
 				if(Command == "list") {
