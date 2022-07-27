@@ -63,28 +63,28 @@ struct Room {
         else HasFirePlace = false;
         }
     };
-/*
-struct Floor {
-    vector<Room> Rooms;
-    int Level;
-    void add_room(string room) {
-        Room temproom;
-        temproom.from_str(room);
-        Rooms.push_back(temproom);
-        }
-    string to_str() {
-        string result = "[ "+to_string( Level )+":";
-        for( int i = 0 ; i < Rooms.size() ; i++ ) result += Rooms[i].to_str();
-        return result+" ]";
-        }
-    void from_str(string info) {
-        vector<string> LOther = Split( info, ":" );
-        Level = stoi( LOther[0] );
-        vector<string> Rooms = Split( LOther[1], "," );
-        for ( int i = 0; i < Rooms.size(); i++ ) add_room( Rooms[i] );
-        }
-    };
-*/
+
+// struct Floor {
+//     vector<Room> Rooms;
+//     int Level;
+//     void add_room(string room) {
+//         Room temproom;
+//         temproom.from_str(room);
+//         Rooms.push_back(temproom);
+//         }
+//     string to_str() {
+//         string result = "[ "+to_string( Level )+":";
+//         for( int i = 0 ; i < Rooms.size() ; i++ ) result += Rooms[i].to_str();
+//         return result+" ]";
+//         }
+//     void from_str(string info) {
+//         vector<string> LOther = Split( info, ":" );
+//         Level = stoi( LOther[0] );
+//         vector<string> Rooms = Split( LOther[1], "," );
+//         for ( int i = 0; i < Rooms.size(); i++ ) add_room( Rooms[i] );
+//         }
+//     };
+
 struct Floor {
     vector<Room> Rooms;
     enum Floor_Number {ONE, TWO, THREE, UNKNOWN} Level;
@@ -161,28 +161,23 @@ struct Region {
     };
 
 int main() {
-    /*Room testroom;
-    testroom.from_str("Z+");
-    cout<<testroom.to_str();*/
-    /*Floor testfloor;
+//     Room testroom;
+//     testroom.from_str("Z+");
+//     cout<<testroom.to_str();*/
+//     Floor testfloor;
     testfloor.from_str("3:C,L,K+,B");
     //testfloor.add_room("C"); testfloor.add_room("L"); testfloor.add_room("K+"); testfloor.add_room("B");
     cout<<testfloor.to_str();*/
-    /*Building testbuilding;
-    testbuilding.from_str("Bordel.1:L,L+,B,B+;2:C,C+;3:K,K+,L,L+");
-    cout<<testbuilding.to_str();*/
+//     Building testbuilding;
+//     testbuilding.from_str("Bordel.1:L,L+,B,B+;2:C,C+;3:K,K+,L,L+");
+//     cout<<testbuilding.to_str();
     
     Region testregion;
     testregion.from_str("Da4a@Bordel.1:L,L+,B,B+;2:C,C+;3:K,K+,L,L+!Banya.1:B+,B!Garage.1:L");
     cout<<testregion.to_str();
-/*
-    string S = "Mama  myla ramu   ";
-    vector<string> SS = Split(S);
+
     cout<<endl;
-    for( int i = 0; i < SS.size() ; i++) cout<<">"<<SS[i]<<"<\n";
-*/
-    cout<<endl;
-    return 0;
+
 }
 
 
